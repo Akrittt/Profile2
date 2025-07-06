@@ -25,7 +25,7 @@ export default function Navbar() {
             </button>
         </div>
         
-        <ul className='sm:flex gap-x-5 text-sm hidden font-[lattomedium] '>
+        <ul className='sm:flex gap-x-5 text-lg hidden font-[lattomedium] '>
                 <li>
                     <a href="#home"><span className='text-purple-800'>#</span>home</a>
                 </li>

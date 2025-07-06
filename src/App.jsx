@@ -2,7 +2,7 @@ import './App.css'
 import AboutMe from './components/AboutMe'
 import Footer from './components/Footer'
 import Home from './components/Home'
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import Skills from './components/Skills'
 import Works from './components/Works'
 import { motion, useScroll } from "motion/react"
