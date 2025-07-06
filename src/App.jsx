@@ -1,10 +1,10 @@
 import './App.css'
-import AboutMe from './components/AboutMe'
-import Footer from './components/Footer'
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import Skills from './components/Skills'
-import Works from './components/Works'
+import AboutMe from './components/AboutMe.jsx'
+import Footer from './components/Footer.jsx'
+import Home from './components/Home.jsx'
+import Navbar from './components/Navbar.jsx'
+import Skills from './components/Skills.jsx'
+import Works from './components/Works.jsx'
 import { motion, useScroll } from "motion/react"
 
 function App() {
