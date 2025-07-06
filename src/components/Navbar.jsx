@@ -12,14 +12,14 @@ export default function Navbar() {
 
     return (
     <>
-    <nav className='bg-nav text-orange-50 flex justify-between items-center w-full h-16 px-8 fixed  shadow-2xl shadow-shadow z-50'>
+    <nav className='bg-nav text-orange-50 flex justify-between items-center w-full h-16 px-5 md:px-15 fixed  shadow-2xl shadow-shadow z-50'>
         <div id="name + logo" className='flex justify-start items-center'>
             <img src={image} alt="logo"
             className='h-7 ' />
             <p className='font-extralight text-lg font-[lattobold]'>Akrit Gupta</p>
         </div>
 
-        <ul className='sm:flex gap-x-5 text-lg hidden font-[lattomedium] '>
+        <ul className='md:flex gap-x-5 text-lg hidden font-[lattomedium] '>
                 <li>
                     <a href="#home"><span className='text-purple-800'>#</span>home</a>
                 </li>
@@ -44,9 +44,9 @@ export default function Navbar() {
         </ul>
     
 
-        <div className='flex mt-30 '>
+        <div className='flex md:hidden bg-dark p-2'>
             {menuOpen && (
-        <div className='sm:hidden flex flex-col  bg-dark'>
+        <div className='md:hidden flex flex-col mt-25'>
             <a href="#home" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800 '>#</span>home</a>   
             <a href="#projects" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800'>#</span>projects</a>
             <a href="#about-me" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800'>#</span>about-me</a>    
@@ -55,9 +55,9 @@ export default function Navbar() {
         </div>
         )}
 
-        <div className="sm:hidden">
+        <div className="md:hidden ">
             <button onClick={toggleMenu} className="text-orange-50 focus:outline-none">
-                {menuOpen ? <X size={25} className='' /> : <Menu size={28}  />}
+                {menuOpen ? <X size={25} className='mt-25 ' /> : <Menu size={28}  />}
             </button>
         </div>
         

@@ -11,12 +11,12 @@ export default function Home() {
                 <button className='flex-start font-[lattomedium] text-md border-2 border-purple-950 w-fit px-5 py-2 hover:bg-purple-700 hover:text-black'>Contact me!!</button>
             </div>
             <div className='basis-1/3'>
-                <img src={Image} alt="image" className='h-100 md:pr-10 2xl:pl-50' />
+                <img src={Image} alt="image" className='h-100 pr-10 2xl:pl-50' />
             </div>
             
 
         </div>
-        <div className='flex flex-col text-left px-5 md:px-15 items-end '>
+        <div className='flex flex-col text-left px-5 md:px-10 lg:px-15 items-end '>
             <p className='border-1 w-fit px-4 py-3 pb-5 text-md border-gray-500 font-[lattomedium] before:content-["“"] after:content-["”"] before:text-3xl after:text-3xl before:mr-1 after:ml-1'> 99 little bugs in the code, take one down, patch it around… 127 bugs in the code </p>
             <p className='border-x-1 border-b-1 w-fit px-2 pr-2 py-2 text-sm border-gray-500 font-[lattomedium]'> – Code poet, circa 2AM</p>
         </div>

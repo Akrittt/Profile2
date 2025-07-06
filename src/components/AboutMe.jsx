@@ -3,11 +3,11 @@ import Image from "../assets/Image2.png"
 
 export default function AboutMe() {
   return (
-    <section id='about-me' className='p-5 md:p-15 pt-20 md:flex '>
+    <section id='about-me' className='p-5 md:p-15 pt-20 md:flex md:flex-col lg:flex-row '>
         
-      <div className='md:pr-25 basis-2/3'> 
+      <div className='lg:pr-25 basis-2/3'> 
         <div className='flex items-center pb-10 '>
-        <h1 className='text-4xl font-[lattobold] font-bold mr-5 '><span className='text-4xl text-purple-700'>/</span>about-me</h1>
+        <h1 className='text-4xl font-[lattobold] font-bold mr-5 w-65 '><span className='text-4xl text-purple-700'>/</span>about-me</h1>
         <div className='h-0.5  bg-purple-700 sm:w-full md:flex-grow '></div>
       </div>
       <div className=''>
@@ -30,7 +30,7 @@ export default function AboutMe() {
 
         <div className='basis-1/3 justify-center items-center hidden md:flex flex-col '>
             <img src={Image} alt="image"
-                className='h-90 w-65 xl:h-110 xl:w-80 '  
+                className='h-110 w-80 '  
             />
             <div className='h-0.5 bg-purple-700 w-75 xl:w-90'></div>
         </div>

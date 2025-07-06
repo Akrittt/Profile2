@@ -12,7 +12,7 @@ function App() {
   
 
   return (
-    <div className='bg-gradient-to-b from-dark via-shadow to-dark  text-orange-50 '>
+    <div className='bg-gradient-to-br from-dark via-shadow to-dark  text-orange-50 '>
       <motion.div
                 id="scroll-indicator"
                 style={{

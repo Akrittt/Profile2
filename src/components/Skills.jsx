@@ -41,7 +41,7 @@ export default function Skills() {
     <div id="skills" className='p-5 md:p-15 pt-25'>
       <div className="flex items-center pb-10 ">
             <h1 className='text-4xl font-[lattobold] font-bold w-35 pr-5'><span className='text-4xl text-purple-800 '>/</span>skills</h1>
-            <div className='h-0.5 bg-purple-700 w-full flex-grow'></div>
+            <div className='h-0.5 bg-purple-700 w-full flex-grow hidden sm:block'></div>
             <p className="text-sm text-purple-200 italic ml-10 w-60">
   *             Drag to reorder <br/>(Framer Motion powered)
             </p>
