@@ -51,11 +51,11 @@ const Works = () => {
   return (
     <section
       id="projects"
-      className=" p-15 mt-12"
+      className=" p-5 md:p-15 mt-12"
     >
         <div className="flex items-center pt-10 pb-18 ">
-            <h1 className='text-4xl font-[lattobold] font-bold  w-58'><span className='text-4xl text-purple-800 '>/</span>projects</h1>
-            <div className='h-0.5 bg-purple-700 w-full flex-grow'></div>
+            <h1 className='text-4xl font-[lattobold] font-bold mr-5'><span className='text-4xl text-purple-800 '>/</span>projects</h1>
+            <div className='h-0.5 bg-purple-700 w-full md:flex-grow'></div>
             <div className="w-30 md:w-80"></div>
         </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">

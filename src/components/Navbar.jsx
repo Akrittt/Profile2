@@ -19,21 +19,15 @@ export default function Navbar() {
             <p className='font-extralight text-lg font-[lattobold]'>Akrit Gupta</p>
         </div>
 
-        <div className="sm:hidden">
-            <button onClick={toggleMenu} className="text-orange-50 focus:outline-none">
-                {menuOpen ? <X size={28} /> : <Menu size={28}  />}
-            </button>
-        </div>
-        
         <ul className='sm:flex gap-x-5 text-lg hidden font-[lattomedium] '>
                 <li>
                     <a href="#home"><span className='text-purple-800'>#</span>home</a>
                 </li>
                 <li>
-                    <a href="#about-me"><span className='text-purple-800'>#</span>about-me</a>
+                    <a href="#projects"><span className='text-purple-800'>#</span>projects</a>
                 </li>
                 <li>
-                    <a href="#projects"><span className='text-purple-800'>#</span>projects</a>
+                    <a href="#about-me"><span className='text-purple-800'>#</span>about-me</a>
                 </li>
                 <li>
                     <a href="#skills" ><span className='text-purple-800'>#</span>skills</a>
@@ -50,15 +44,25 @@ export default function Navbar() {
         </ul>
     
 
-        {menuOpen && (
-        <div className='sm:hidden flex flex-col gap-x-2'>
-            <a href="" className='font-[hello5] text-orange-50'><span className='text-purple-800 '>#</span>home</a>
-            <a href="" className='font-[hello5] text-orange-50'><span className='text-purple-800'>#</span>about-me</a>       
-            <a href="" className='font-[hello5] text-orange-50'><span className='text-purple-800'>#</span>projects</a>
-            <a href="" className='font-[hello5] text-orange-50'><span className='text-purple-800'>#</span>contact-me</a>  
+        <div className='flex mt-30 '>
+            {menuOpen && (
+        <div className='sm:hidden flex flex-col  bg-dark'>
+            <a href="#home" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800 '>#</span>home</a>   
+            <a href="#projects" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800'>#</span>projects</a>
+            <a href="#about-me" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800'>#</span>about-me</a>    
+            <a href="#skills" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800'>#</span>skills</a> 
+            <a href={pdf} download className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800'>#</span>Download Resume</a> 
         </div>
         )}
 
+        <div className="sm:hidden">
+            <button onClick={toggleMenu} className="text-orange-50 focus:outline-none">
+                {menuOpen ? <X size={25} className='' /> : <Menu size={28}  />}
+            </button>
+        </div>
+        
+
+        </div>
         
     </nav>
   
