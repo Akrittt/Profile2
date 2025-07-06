@@ -44,7 +44,7 @@ export default function Navbar() {
         </ul>
     
 
-        <div className='flex md:hidden bg-dark p-2'>
+        <div className='flex md:hidden bg-nav p-2'>
             {menuOpen && (
         <div className='md:hidden flex flex-col mt-25'>
             <a href="#home" className='font-[lattomedium] text-orange-50 text-lg'><span className='text-purple-800 '>#</span>home</a>   
