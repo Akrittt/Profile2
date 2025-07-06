@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: hello1;
+    src: url(./assets/ncl-neovibes/NCLNeovibes-Demo.otf);
+}
+@font-face {
+    font-family: hello2;
+    src: url(./assets/counter-stream-demo/CounterStreamDemoRegular.ttf);
+}
+@font-face {
+    font-family: lattolight;
+    src: url(./assets/lato/Lato-Light.ttf);
+}
+@font-face {
+    font-family: lattomedium;
+    src: url(./assets/lato/Lato-Medium.ttf);
+}
+@font-face {
+    font-family: lattobold;
+    src: url(./assets/lato/Lato-Bold.ttf);
+}
+@font-face {
+    font-family: lattoblack;
+    src: url(./assets/lato/Lato-Black.ttf);
+}
+@font-face {
+    font-family: hello7;
+    src: url(./assets/rock-it/Rockit.ttf);
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+@theme{
+    --color-dark:#290B2D ;
+    --color-nav:#230a27;
+    --color-shadow:#160419;
+    --color-heading:#b632ce;
+    --color-border:#a6474f;
+    --color-card:#17001a;
+    --color-subcard:#320037
+}
+.quote::before {
+  content: '\201C'; /* Left double quote “ */
+}
+
+.quote::after {
+  content: '\201D'; /* Right double quote ” */
+}
