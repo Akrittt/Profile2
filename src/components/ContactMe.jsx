@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, User, MessageCircle, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, User, MessageCircle, Send, CheckCircle, AlertCircle,Server } from 'lucide-react';
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ const ContactMe = () => {
     subject: '',
     message: ''
   });
-  
+
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +23,7 @@ const ContactMe = () => {
   const handleSubmit = async () => {
     setLoading(true);
     setStatus('');
-    
+
     try {
       const response = await fetch('http://localhost:8080/api/contact', {
         method: 'POST',
@@ -32,7 +32,7 @@ const ContactMe = () => {
         },
         body: JSON.stringify(formData)
       });
-      
+
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
@@ -48,8 +48,8 @@ const ContactMe = () => {
   };
 
   return (
-    <div id="Contact-Me" className="min-h-screen flex items-center justify-center p-6 flex-col">
-    <div className='h-0.5 bg-purple-700 w-full flex-grow hidden sm:block mb-4'></div>
+    <div id="Contact-Me" className=" min-h-screen flex items-center justify-center p-6 flex-col mb-15">
+
       <div className="max-w-2xl w-full">
         {/* Header */}
         <div className="text-center my-10">
@@ -58,8 +58,19 @@ const ContactMe = () => {
           </h1>
 
           <p className="text-slate-300 text-lg pt-5">
-            Let's discuss your next project or just say hello!
+            Have a question or want to collaborate? Drop me a message!
           </p>
+        </div>
+
+        {/* Feature Highlight Box */}
+        <div className="bg-gray-800/50 border border-purple-800/30 rounded-lg p-4 flex items-center gap-4 mb-8">
+            <Server size={32} className="text-purple-400 flex-shrink-0" />
+            <div>
+                <h3 className="font-bold text-white">Spring Boot Backend at Work</h3>
+                <p className="text-sm text-slate-400">
+                    When you submit this form, my Java backend will process it and use the <strong>JavaMailSender</strong> library to send you a "thank you" email automatically.
+                </p>
+            </div>
         </div>
 
         {/* Contact Form */}

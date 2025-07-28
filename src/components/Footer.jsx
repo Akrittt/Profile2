@@ -6,10 +6,10 @@ import { IoMdMailUnread } from "react-icons/io";
 const Footer = () => {
   return (
     <motion.footer
-      className="bg-nav border-t-2 border-card text-white text-center p-4"
+      className="bg-nav border-t-2 border-card text-white text-center p-4 border-t-white/30"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 2 }}
     >
       <div className="mb-4">
         <p className="text-sm sm:text-base">Follow me on social platforms</p>

@@ -1,74 +1,82 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
 
-const projects = [
-  
-  {
-    title: "🌍 Travel Itinerary Generator",
-    description:
-      "Developed a Travel Itinerary Generator that customizes plans based on user preferences, significantly boosting engagement. It features real-time weather updates, interactive maps, and a guide-matching system, enhancing the overall user experience. I also integrated real-time language translation supporting multiple languages, improving accessibility for diverse users. Additionally, I optimized API performance to ensure seamless and efficient interactions.",
-    github: "https://github.com/Akrittt/Travel_Itinerary_Generator",
-    live: "https://travelogue-hackathon.netlify.app/",
-    tech: ["React", "API Integration", "Tailwind CSS", "JavaScript"],
-    stats: [
-      { label: "Boosting Engagement", value: 40, suffix: "%" },
-      { label: "Enhancing User Experience", value: 35, suffix: "%" },
-      { label: "Language Translation Supporting", value: 20, suffix: "+" },
-    ],
-  },
-  {
-    title: "🔢 Bubble Sort Visualizer",
-    description:
-      "Created an interactive Bubble Sort Visualizer that effectively improves comprehension through dynamic visual representation. The application supports large datasets with optimized performance, reducing lag and enhancing responsiveness. It includes user-controlled customization options for sorting speed and array size, providing a more engaging and tailored experience. Additionally, asynchronous rendering was implemented to improve computation efficiency and overall user satisfaction.",
-    github: "https://github.com/yourusername/bubble-sort-visualizer",
-    live: "https://splendorous-rugelach-3b5436.netlify.app/",
-    tech: ["React", "JavaScript", "CSS"],
-    stats: [
-      { label: "Reducing Lag By", value: 25, suffix: "%" },
-      { label: "Boosting Interactivity", value: 35, suffix: "%" },
-      { label: "Cutting Computation Time", value: 20, suffix: "%" },
-    ],
-  },
-  {
-    title: "🐍 Snake Game",
-    description:
-      "Developed a classic browser-based Snake Game using HTML5, CSS3, and Vanilla JavaScript. The game features real-time movement logic, collision detection, and dynamic score tracking for an immersive experience. Integrated sound effects for actions like movement, food consumption, and collisions to enhance gameplay. Deployed on Vercel with a responsive design and optimized rendering for smooth, enjoyable performance.",
-    github: "https://github.com/Akrittt/Snake_Game",
-    live: "https://snake-game-nine-sooty.vercel.app/",
-    tech: ["HTML5", "CSS3", "Vanilla JavaScript"],
-    stats: [
-      { label: "Reducing Lag By", value: 25, suffix: "%" },
-      { label: "Boosting Interactivity", value: 35, suffix: "%" },
-      { label: "Cutting Computation Time", value: 20, suffix: "%" },
-    ],
-  },
-];
-
 const Works = () => {
+  const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('http://localhost:8080/api/projects');
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setProjects(data);
+        setError(null);
+
+
+      } catch (err) {
+        // If an error occurs, update the error state
+        console.error('Failed to fetch projects:', err);
+        setError('Failed to load projects. Please make sure the backend server is running.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="projects" className="p-5 md:p-15 mt-12 text-center text-white">
+        <h2 className="text-2xl">Loading Projects...</h2>
+      </section>
+    );
+  }
+  if (error) {
+    return (
+      <section id="projects" className="p-5 md:p-15 mt-12 text-center text-red-500">
+        <h2 className="text-2xl">Error</h2>
+        <p>{error}</p>
+      </section>
+    );
+  }
 
   return (
-    <section
-      id="projects"
-      className=" p-5 md:p-15 mt-12"
-    >
-        <div className="flex items-center pt-10 pb-18 ">
-            <h1 className='text-4xl font-[lattobold] font-bold mr-5'><span className='text-4xl text-purple-800 '>/</span>projects</h1>
-            <div className='h-0.5 bg-purple-700 w-full md:flex-grow'></div>
-            <div className="w-30 md:w-80 hidden sm:block"></div>
+    <section id="projects" className=" p-5 md:p-15 mt-12">
+
+      {/* Header */}
+      <div className="mb-12">
+        <div className="flex items-center gap-4 mb-5">
+          <h1 className="text-4xl font-bold text-white mb-4"><span className='text-4xl text-purple-700 mr-1'>/</span>
+            my- <span className="text-purple-400">projects</span>
+          </h1>
+          <div className='h-0.5 bg-purple-700 mb-2 flex-grow hidden sm:block'></div>
         </div>
+        <p className="text-slate-400 text-xl mx-auto text-">
+          Explore my portfolio of innovative solutions and creative implementations
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="p-4 sm:p-6 shadow-2xl shadow-black bg-card rounded-4xl transition-transform hover:scale-105"
+            className="p-4 sm:p-6 shadow-2xl shadow-black bg-card border-1 border-purple-950 rounded-4xl transition-transform hover:scale-105"
           >
             <h2 className="text-lg sm:text-2xl font-[lattobold] mt-3    ">
               {project.title}
             </h2>
             <p className=" text-sm sm:text-base font-[lattolight] mt-8">
-              {project.description.substring(0,200)}...
+              {project.description.substring(0, 200)}...
             </p>
             <button
               className="mt-8 font-[lattolight] px-5 py-4 bg-fuchsia-950 rounded-4xl hover:bg-purple-950  transition-colors text-sm sm:text-base"
@@ -94,7 +102,7 @@ const Works = () => {
               initial={{ scale: 1, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 1, opacity: 0 }}
-              
+
             >
               <button
                 className="absolute top-4 right-4 font-bold text-2xl"
@@ -110,7 +118,7 @@ const Works = () => {
                   <p className="mt-2 text-sm sm:text-base font-[lattomedium] mr-4">
                     {selectedProject.description}
                   </p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {selectedProject.tech.map((tech, i) => (
                       <motion.div
                         key={i}
@@ -128,7 +136,7 @@ const Works = () => {
                         </motion.div>
                       </motion.div>
                     ))}
-                </div>
+                  </div>
                   {selectedProject.stats && (
                     <div className="mt-6">
                       <h4 className="text-xl sm:text-2xl font-bold text-center mb-5 font-[lattobold]">
