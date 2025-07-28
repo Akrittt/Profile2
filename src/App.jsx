@@ -5,6 +5,7 @@ import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
 import Skills from './components/Skills.jsx'
 import Works from './components/Works.jsx'
+import ContactMe from './components/ContactMe.jsx'
 import { motion, useScroll } from "motion/react"
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <Works/>
       <AboutMe/>
       <Skills/>
+      <ContactMe/>
       <Footer/>
     </div>
   )

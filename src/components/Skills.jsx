@@ -118,7 +118,7 @@ export default function Skills() {
                 value={skill}
                 whileDrag={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="flex items-center gap-3 p-3 rounded-md shadow cursor-grab bg-subcard"
+                className="flex items-center gap-3 p-3 rounded-md shadow cursor-grab bg-subcard "
             >
                 <div className="text-2xl">{skill.icon}</div>
                 <span className="font-[lattomedium]">{skill.name}</span>

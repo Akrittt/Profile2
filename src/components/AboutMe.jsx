@@ -3,7 +3,7 @@ import Image from "../assets/Image2.png"
 
 export default function AboutMe() {
   return (
-    <section id='about-me' className='p-5 md:p-15 pt-20 md:flex md:flex-col lg:flex-row '>
+    <div id='about-me' className='p-5 md:p-15  md:flex md:flex-col lg:flex-row '>
         
       <div className='lg:pr-25 basis-2/3'> 
         <div className='flex items-center pb-10 '>
@@ -35,6 +35,6 @@ export default function AboutMe() {
             <div className='h-0.5 bg-purple-700 w-75 xl:w-90'></div>
         </div>
       
-    </section>
+    </div>
   )
 }

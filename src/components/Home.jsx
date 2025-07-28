@@ -8,7 +8,7 @@ export default function Home() {
             <div className='basis-2/3 flex flex-col justify-center pl-5 md:pl-15 gap-y-3 '>
                 <h1 className='font-[lattoblack] text-5xl '>Hola, I'm Akrit<br/> <span className=' bg-heading text-transparent bg-clip-text font-bold text-5xl '>MERN Stack Developer</span> by day, bug squasher by night.  </h1>
                 <p className='font-[lattomedium] text-xl pr-5 text-gray-400'>I build sleek, responsive websites where code meets creativity (and chai)</p>
-                <button className='flex-start font-[lattomedium] text-md border-2 border-purple-950 w-fit px-5 py-2 hover:bg-purple-700 hover:text-black'>Contact me!!</button>
+                <button className='flex-start font-[lattomedium] text-md border-2 border-purple-950 w-fit px-5 py-2 hover:bg-purple-700 hover:text-black' onClick={() => window.location.href = "#Contact-Me"}>Contact me!!</button>
             </div>
             <div className='basis-1/3'>
                 <img src={Image} alt="image" className='h-100 pr-10 2xl:pl-50' />
