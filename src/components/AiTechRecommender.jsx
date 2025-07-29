@@ -25,7 +25,7 @@ const AiTechRecommender = () => {
         prompt = `Brainstorm a creative and interesting project idea that can be built using the following technologies: "${projectType}". Provide a project name, a short description, and a list of 3-5 key features. Keep it short and precise`;
       }
 
-      const response = await fetch('http://localhost:8080/api/gemini-proxy', {
+      const response = await fetch('https://portfolio-backend-9boe.onrender.com/api/gemini-proxy', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
