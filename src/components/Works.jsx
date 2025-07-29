@@ -12,7 +12,7 @@ const Works = () => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8080/api/projects');
+        const response = await fetch('https://portfolio-backend-9boe.onrender.com/api/projects');
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
