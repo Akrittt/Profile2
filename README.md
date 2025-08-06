@@ -32,9 +32,9 @@ The project is built using the latest React features, along with Tailwind CSS fo
 🧰 **Tech Stack**
 -----------------
 
-| **Frontend** | **Backend** | **Tools** |
+| **Frontend** | **Tools** |
 | --- | --- | --- |
-| React | N/A | Tailwind CSS, Vite, ESLint |
+| React | Tailwind CSS, Vite, ESLint |
 
 📁 **Project Structure**
 -------------------------
