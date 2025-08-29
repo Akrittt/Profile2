@@ -12,7 +12,7 @@ export default function Navbar() {
 
     const downloadResumeFromAPI = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/resume/download', {
+            const response = await fetch('https://portfolio-backend-9boe.onrender.com/api/resume/download', {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/pdf',
